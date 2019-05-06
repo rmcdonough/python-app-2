@@ -29,6 +29,12 @@ UNICORN2 = 'unicorn2.gif'
 UNICORNS = [UNICORN1, UNICORN2]
 
 
+@app.after_request
+def apply_caching(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    return response
+
+
 @app.route('/unicorn1')
 def unicorn1():
     return send_file(UNICORN1, mimetype='image/jpeg')
