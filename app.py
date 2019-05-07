@@ -45,7 +45,7 @@ def unicorn2():
 
 
 @app.route('/unicorn3.jpg')
-def unicorn1():
+def unicorn3():
     return send_file(UNICORN3, mimetype='image/jpeg')
 
 
