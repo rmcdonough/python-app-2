@@ -24,7 +24,8 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 
 UNICORN1 = 'unicorn1.jpg'
 UNICORN2 = 'unicorn2.gif'
-UNICORNS = [UNICORN1, UNICORN2]
+UNICORN3 = 'unicorn3.jpg'
+UNICORNS = [UNICORN1, UNICORN2, UNICORN3]
 
 
 @app.after_request
@@ -41,6 +42,11 @@ def unicorn1():
 @app.route('/unicorn2.gif')
 def unicorn2():
     return send_file(UNICORN2, mimetype='image/gif')
+
+
+@app.route('/unicorn3.jpg')
+def unicorn1():
+    return send_file(UNICORN3, mimetype='image/jpeg')
 
 
 @app.route('/random')
@@ -60,3 +66,4 @@ def health_check():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
+
