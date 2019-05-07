@@ -7,12 +7,10 @@ otherwise doing dumb things
 
 import logging
 import json_logging
-import os
 import random
 import socket
 import sys
 from flask import Flask, jsonify, send_file
-from logging.config import dictConfig
 
 
 app = Flask(__name__)
@@ -35,12 +33,12 @@ def apply_caching(response):
     return response
 
 
-@app.route('/unicorn1')
+@app.route('/unicorn1.jpg')
 def unicorn1():
     return send_file(UNICORN1, mimetype='image/jpeg')
 
 
-@app.route('/unicorn2')
+@app.route('/unicorn2.gif')
 def unicorn2():
     return send_file(UNICORN2, mimetype='image/gif')
 
