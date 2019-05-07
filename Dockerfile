@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 COPY app.py /usr/src/app/
 COPY unicorn1.jpg /usr/src/app/
 COPY unicorn2.gif /usr/src/app/
+COPY unicorn3.jpg /usr/src/app/
 
 # tell the port number the container should expose
 EXPOSE 5000
